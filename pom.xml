@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.github.bbottema</groupId>
+		<artifactId>standard-project-parent</artifactId>
+		<version>1.0.3</version>
+	</parent>
+
+	<artifactId>modular-project-parent</artifactId>
+	<packaging>pom</packaging>
+	<name>modular-project-parent</name>
+	<version>1.0.0</version>
+	<description>Benny's modular parent POM full of default sweetness and boilerplate code.</description>
+	<url>https://github.com/bbottema/modular-project-parent</url>
+	<inceptionYear>2019</inceptionYear>
+
+	<scm>
+		<connection>scm:git:git://github.com/bbottema/modular-project-parent.git</connection>
+		<developerConnection>scm:git:git@github.com:bbottema/modular-project-parent.git</developerConnection>
+		<url>https://github.com/bbottema/modular-project-parent</url>
+	</scm>
+
+	<issueManagement>
+		<system>GitHub Issues</system>
+		<url>https://github.com/bbottema/modular-project-parent/issues</url>
+	</issueManagement>
+
+	<dependencies>
+	</dependencies>
+
+	<build>
+		<plugins>
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.8.1</version>
+                <executions>
+                    <execution>
+                        <id>default-prepare-agent</id>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.0.1</version>
+                <executions>
+                    <execution>
+                        <id>aggregate</id>
+                        <goals>
+                            <goal>aggregate-jar</goal>
+                        </goals>
+                        <phase>package</phase>
+                        <configuration>
+                            <doclint>all,-missing</doclint>
+                            <show>public</show>
+                            <nohelp>true</nohelp>
+                            <excludePackageNames>*.internal.*,testutil,demo</excludePackageNames>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                        <configuration>
+                            <doclint>all,-missing</doclint>
+                            <show>public</show>
+                            <nohelp>true</nohelp>
+                            <excludePackageNames>*.internal.*</excludePackageNames>
+                            <quiet>true</quiet>
+                        </configuration>
+                    </execution>
+                </executions>
+                <configuration>
+                    <failOnError>false</failOnError>
+                </configuration>
+            </plugin>
+		</plugins>
+	</build>
+</project>
