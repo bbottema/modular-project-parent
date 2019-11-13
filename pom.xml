@@ -81,6 +81,7 @@
                 </executions>
                 <configuration>
                     <failOnError>false</failOnError>
+					<detectOfflineLinks>false</detectOfflineLinks>
                 </configuration>
             </plugin>
 		</plugins>
