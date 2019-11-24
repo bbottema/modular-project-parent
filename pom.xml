@@ -51,6 +51,14 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <version>3.1.1</version>
+				<configuration>
+					<failOnError>false</failOnError>
+					<detectOfflineLinks>false</detectOfflineLinks>
+					<doclint>all,-missing</doclint>
+					<show>public</show>
+					<nohelp>true</nohelp>
+					<quiet>true</quiet>
+				</configuration>
                 <executions>
                     <execution>
                         <id>aggregate</id>
@@ -59,30 +67,10 @@
                         </goals>
                         <phase>package</phase>
                         <configuration>
-                            <doclint>all,-missing</doclint>
-                            <show>public</show>
-                            <nohelp>true</nohelp>
                             <excludePackageNames>*.internal.*,testutil,demo</excludePackageNames>
                         </configuration>
                     </execution>
-                    <execution>
-                        <id>attach-javadocs</id>
-                        <goals>
-                            <goal>jar</goal>
-                        </goals>
-                        <configuration>
-                            <doclint>all,-missing</doclint>
-                            <show>public</show>
-                            <nohelp>true</nohelp>
-                            <excludePackageNames>*.internal.*</excludePackageNames>
-                            <quiet>true</quiet>
-                        </configuration>
-                    </execution>
                 </executions>
-                <configuration>
-                    <failOnError>false</failOnError>
-					<detectOfflineLinks>false</detectOfflineLinks>
-                </configuration>
             </plugin>
 		</plugins>
 	</build>
