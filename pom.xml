@@ -28,9 +28,6 @@
 		<url>https://github.com/bbottema/modular-project-parent/issues</url>
 	</issueManagement>
 
-	<dependencies>
-	</dependencies>
-
 	<build>
 		<plugins>
             <plugin>
