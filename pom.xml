@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>com.github.bbottema</groupId>
 		<artifactId>standard-project-parent</artifactId>
-		<version>1.0.9</version>
+		<version>1.0.10</version>
 	</parent>
 
 	<artifactId>modular-project-parent</artifactId>
@@ -33,25 +33,12 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>3.1.1</version>
-				<configuration>
-					<failOnError>false</failOnError>
-					<detectOfflineLinks>false</detectOfflineLinks>
-					<doclint>all,-missing</doclint>
-					<show>public</show>
-					<nohelp>true</nohelp>
-					<quiet>true</quiet>
-				</configuration>
                 <executions>
                     <execution>
-                        <id>aggregate</id>
+                        <id>aggregate-jar</id>
                         <goals>
                             <goal>aggregate-jar</goal>
                         </goals>
-                        <phase>package</phase>
-                        <configuration>
-                            <excludePackageNames>*.internal.*,testutil,demo</excludePackageNames>
-                        </configuration>
                     </execution>
                 </executions>
             </plugin>
