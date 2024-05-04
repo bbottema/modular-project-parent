@@ -12,7 +12,7 @@
 	<artifactId>modular-project-parent</artifactId>
 	<packaging>pom</packaging>
 	<name>modular-project-parent</name>
-	<version>1.0.30</version>
+	<version>1.0.31</version>
 	<description>Benny's modular parent POM full of default sweetness and boilerplate code.</description>
 	<url>https://github.com/bbottema/modular-project-parent</url>
 	<inceptionYear>2019</inceptionYear>
